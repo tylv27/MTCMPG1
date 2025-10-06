@@ -6,7 +6,7 @@ interface AdjacencyMatrixProps {
 export function AdjacencyMatrix({ matrix, n }: AdjacencyMatrixProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Adjacency Matrix</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Matriz de Adyacencia</h2>
       <div className="overflow-x-auto">
         <table className="border-collapse">
           <thead>

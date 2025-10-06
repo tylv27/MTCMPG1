@@ -128,7 +128,7 @@ export function GraphVisualization({
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Graph Visualization</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Visualización del Grafo</h2>
       <canvas
         ref={canvasRef}
         width={600}
@@ -138,15 +138,15 @@ export function GraphVisualization({
       <div className="mt-4 flex flex-wrap gap-3">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-full bg-gray-300 border-2 border-white"></div>
-          <span className="text-sm text-gray-600">Unvisited</span>
+          <span className="text-sm text-gray-600">No Visitado</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-full bg-indigo-500 border-2 border-white"></div>
-          <span className="text-sm text-gray-600">Current Component</span>
+          <span className="text-sm text-gray-600">Componente Actual</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-full border-4 border-yellow-400"></div>
-          <span className="text-sm text-gray-600">Active Node</span>
+          <span className="text-sm text-gray-600">Nodo Activo</span>
         </div>
       </div>
     </div>

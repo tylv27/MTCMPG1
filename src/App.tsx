@@ -66,11 +66,11 @@ function App() {
           <div className="flex items-center justify-center gap-3 mb-2">
             <Network className="w-10 h-10 text-blue-600" />
             <h1 className="text-4xl font-bold text-gray-800">
-              Connected Components Analyzer
+              Analizador de Componentes Conexas
             </h1>
           </div>
           <p className="text-gray-600">
-            Visualize and understand graph connected components using Depth-First Search
+            Visualiza y comprende las componentes conexas de grafos usando Búsqueda en Profundidad
           </p>
         </header>
 
@@ -88,7 +88,7 @@ function App() {
                 onClick={handleReset}
                 className="px-6 py-2 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors shadow-md"
               >
-                New Graph
+                Nuevo Grafo
               </button>
             </div>
 

@@ -35,7 +35,7 @@ export function AlgorithmSteps({
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 space-y-4">
-      <h2 className="text-xl font-bold text-gray-800">Algorithm Steps</h2>
+      <h2 className="text-xl font-bold text-gray-800">Pasos del Algoritmo</h2>
 
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 min-h-24">
         <div className="flex items-start gap-3">
@@ -55,7 +55,7 @@ export function AlgorithmSteps({
           onClick={handlePrevious}
           disabled={currentStepIndex === 0}
           className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          title="Previous step"
+          title="Paso anterior"
         >
           <SkipBack className="w-5 h-5 text-gray-700" />
         </button>
@@ -64,7 +64,7 @@ export function AlgorithmSteps({
           onClick={onPlayPause}
           disabled={isLastStep && !isPlaying}
           className="p-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          title={isPlaying ? 'Pause' : 'Play'}
+          title={isPlaying ? 'Pausar' : 'Reproducir'}
         >
           {isPlaying ? (
             <Pause className="w-5 h-5" />
@@ -77,7 +77,7 @@ export function AlgorithmSteps({
           onClick={handleNext}
           disabled={currentStepIndex === steps.length - 1}
           className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          title="Next step"
+          title="Siguiente paso"
         >
           <SkipForward className="w-5 h-5 text-gray-700" />
         </button>
@@ -85,7 +85,7 @@ export function AlgorithmSteps({
         <button
           onClick={onReset}
           className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
-          title="Reset to start"
+          title="Reiniciar al inicio"
         >
           <RotateCcw className="w-5 h-5 text-gray-700" />
         </button>
@@ -100,34 +100,34 @@ export function AlgorithmSteps({
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
           />
           <div className="flex justify-between mt-1">
-            <span className="text-xs text-gray-500">Step 1</span>
+            <span className="text-xs text-gray-500">Paso 1</span>
             <span className="text-xs text-gray-600 font-medium">
               {currentStepIndex + 1} / {steps.length}
             </span>
-            <span className="text-xs text-gray-500">Step {steps.length}</span>
+            <span className="text-xs text-gray-500">Paso {steps.length}</span>
           </div>
         </div>
       </div>
 
       <div className="border-t pt-4">
-        <h3 className="text-sm font-semibold text-gray-700 mb-2">Algorithm Info</h3>
+        <h3 className="text-sm font-semibold text-gray-700 mb-2">Información del Algoritmo</h3>
         <div className="space-y-2 text-sm text-gray-600">
           <div className="flex items-center justify-between">
-            <span>Visited Nodes:</span>
+            <span>Nodos Visitados:</span>
             <span className="font-medium text-gray-800">
-              {Array.from(currentStep.visitedNodes).sort((a, b) => a - b).join(', ') || 'None'}
+              {Array.from(currentStep.visitedNodes).sort((a, b) => a - b).join(', ') || 'Ninguno'}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span>Current Component:</span>
+            <span>Componente Actual:</span>
             <span className="font-medium text-gray-800">
               {currentStep.currentComponent.length > 0
                 ? `[${currentStep.currentComponent.join(', ')}]`
-                : 'None'}
+                : 'Ninguno'}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span>Components Found:</span>
+            <span>Componentes Encontradas:</span>
             <span className="font-medium text-gray-800">
               {currentStep.allComponents.length}
             </span>

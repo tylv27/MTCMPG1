@@ -10,7 +10,7 @@ export function findConnectedComponents(
 
   steps.push({
     type: 'start',
-    message: 'Starting connected components algorithm using Depth-First Search (DFS)',
+    message: 'Iniciando algoritmo de componentes conexas usando Búsqueda en Profundidad (DFS)',
     visitedNodes: new Set(visited),
     currentComponent: [],
     allComponents: [],
@@ -22,7 +22,7 @@ export function findConnectedComponents(
 
       steps.push({
         type: 'start',
-        message: `Found unvisited node ${startNode}. Starting new component exploration.`,
+        message: `Nodo ${startNode} no visitado encontrado. Iniciando exploración de nueva componente.`,
         currentNode: startNode,
         visitedNodes: new Set(visited),
         currentComponent: [],
@@ -35,7 +35,7 @@ export function findConnectedComponents(
 
       steps.push({
         type: 'component_complete',
-        message: `Component ${allComponents.length} complete: [${component.join(', ')}]`,
+        message: `Componente ${allComponents.length} completa: [${component.join(', ')}]`,
         visitedNodes: new Set(visited),
         currentComponent: [...component],
         allComponents: [...allComponents],
@@ -45,7 +45,7 @@ export function findConnectedComponents(
 
   steps.push({
     type: 'all_complete',
-    message: `Algorithm complete! Found ${allComponents.length} connected component${allComponents.length !== 1 ? 's' : ''}.`,
+    message: `¡Algoritmo completo! Se encontraron ${allComponents.length} componente${allComponents.length !== 1 ? 's' : ''} conexa${allComponents.length !== 1 ? 's' : ''}.`,
     visitedNodes: new Set(visited),
     currentComponent: [],
     allComponents: [...allComponents],
@@ -68,7 +68,7 @@ function dfsWithSteps(
 
   steps.push({
     type: 'visit',
-    message: `Visiting node ${node}. Added to current component.`,
+    message: `Visitando nodo ${node}. Agregado a la componente actual.`,
     currentNode: node,
     visitedNodes: new Set(visited),
     currentComponent: [...component],
@@ -80,7 +80,7 @@ function dfsWithSteps(
       if (!visited.has(neighbor)) {
         steps.push({
           type: 'explore',
-          message: `Exploring edge ${node} → ${neighbor}. Node ${neighbor} is unvisited, continuing DFS.`,
+          message: `Explorando arista ${node} → ${neighbor}. El nodo ${neighbor} no está visitado, continuando DFS.`,
           currentNode: node,
           visitedNodes: new Set(visited),
           currentComponent: [...component],
@@ -92,7 +92,7 @@ function dfsWithSteps(
       } else {
         steps.push({
           type: 'explore',
-          message: `Exploring edge ${node} → ${neighbor}. Node ${neighbor} already visited, skipping.`,
+          message: `Explorando arista ${node} → ${neighbor}. El nodo ${neighbor} ya fue visitado, omitiendo.`,
           currentNode: node,
           visitedNodes: new Set(visited),
           currentComponent: [...component],

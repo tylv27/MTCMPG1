@@ -16,11 +16,11 @@ export function Results({ components }: ResultsProps) {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">Connected Components</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Componentes Conexas</h2>
 
       <div className="mb-4 p-4 bg-green-50 rounded-lg border-2 border-green-200">
         <p className="text-lg font-semibold text-green-800">
-          Total Components: <span className="text-2xl">{components.length}</span>
+          Total de Componentes: <span className="text-2xl">{components.length}</span>
         </p>
       </div>
 
@@ -31,25 +31,25 @@ export function Results({ components }: ResultsProps) {
             className={`p-4 rounded-lg border-2 ${componentColors[index % componentColors.length]}`}
           >
             <div className="flex items-center justify-between">
-              <span className="font-semibold">Component {index + 1}:</span>
+              <span className="font-semibold">Componente {index + 1}:</span>
               <span className="font-mono text-lg">
                 [{component.join(', ')}]
               </span>
             </div>
             <div className="mt-2 text-sm opacity-75">
-              Size: {component.length} node{component.length !== 1 ? 's' : ''}
+              Tamaño: {component.length} nodo{component.length !== 1 ? 's' : ''}
             </div>
           </div>
         ))}
       </div>
 
       <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-        <h3 className="text-sm font-semibold text-gray-700 mb-2">About DFS Algorithm</h3>
+        <h3 className="text-sm font-semibold text-gray-700 mb-2">Acerca del Algoritmo DFS</h3>
         <p className="text-sm text-gray-600 leading-relaxed">
-          The Depth-First Search (DFS) algorithm explores each unvisited node by going as deep
-          as possible before backtracking. This naturally identifies all nodes reachable from
-          a starting point, forming a connected component. The process repeats for any remaining
-          unvisited nodes until all components are found.
+          El algoritmo de Búsqueda en Profundidad (DFS) explora cada nodo no visitado yendo
+          tan profundo como sea posible antes de retroceder. Esto identifica naturalmente todos
+          los nodos alcanzables desde un punto de partida, formando una componente conexa. El
+          proceso se repite para cualquier nodo no visitado restante hasta encontrar todas las componentes.
         </p>
       </div>
     </div>

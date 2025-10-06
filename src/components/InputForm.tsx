@@ -20,17 +20,17 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
     const to = parseInt(toNode);
 
     if (isNaN(from) || isNaN(to)) {
-      setError('Please enter valid numbers');
+      setError('Por favor ingresa números válidos');
       return;
     }
 
     if (from < 0 || from >= n || to < 0 || to >= n) {
-      setError(`Nodes must be between 0 and ${n - 1}`);
+      setError(`Los nodos deben estar entre 0 y ${n - 1}`);
       return;
     }
 
     if (from === to) {
-      setError('Cannot create self-loop');
+      setError('No se puede crear un bucle');
       return;
     }
 
@@ -39,7 +39,7 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
     );
 
     if (edgeExists) {
-      setError('Edge already exists');
+      setError('La arista ya existe');
       return;
     }
 
@@ -70,12 +70,12 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 space-y-6">
       <div>
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Graph Configuration</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Configuración del Grafo</h2>
 
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Number of Nodes (n)
+              Número de Nodos (n)
             </label>
             <input
               type="range"
@@ -87,13 +87,13 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
             />
             <div className="text-center mt-2">
               <span className="text-3xl font-bold text-blue-600">{n}</span>
-              <span className="text-sm text-gray-600 ml-2">nodes</span>
+              <span className="text-sm text-gray-600 ml-2">nodos</span>
             </div>
           </div>
 
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Graph Creation Mode
+              Modo de Creación del Grafo
             </label>
             <div className="flex gap-3">
               <button
@@ -109,7 +109,7 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
                 }`}
               >
                 <Shuffle className="inline-block w-5 h-5 mr-2" />
-                Random
+                Aleatorio
               </button>
               <button
                 onClick={() => {
@@ -130,11 +130,11 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
 
           {mode === 'manual' && (
             <div className="border-t pt-4">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">Add Edges</h3>
+              <h3 className="text-sm font-semibold text-gray-700 mb-3">Agregar Aristas</h3>
               <div className="flex gap-2 mb-3">
                 <input
                   type="number"
-                  placeholder="From"
+                  placeholder="Desde"
                   value={fromNode}
                   onChange={(e) => setFromNode(e.target.value)}
                   min="0"
@@ -144,7 +144,7 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
                 <span className="flex items-center text-gray-500">→</span>
                 <input
                   type="number"
-                  placeholder="To"
+                  placeholder="Hasta"
                   value={toNode}
                   onChange={(e) => setToNode(e.target.value)}
                   min="0"
@@ -166,7 +166,7 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
               {edges.length > 0 && (
                 <div className="space-y-2 max-h-48 overflow-y-auto">
                   <p className="text-sm font-medium text-gray-600">
-                    Edges ({edges.length}):
+                    Aristas ({edges.length}):
                   </p>
                   {edges.map((edge, index) => (
                     <div
@@ -194,7 +194,7 @@ export function InputForm({ onSubmit, onRandomGenerate }: InputFormProps) {
             disabled={mode === 'manual' && edges.length === 0}
             className="w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed shadow-md"
           >
-            {mode === 'random' ? 'Generate Random Graph' : 'Create Graph'}
+            {mode === 'random' ? 'Generar Grafo Aleatorio' : 'Crear Grafo'}
           </button>
         </div>
       </div>
